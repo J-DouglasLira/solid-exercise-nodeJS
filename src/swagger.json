@@ -1,0 +1,20 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Test",
+    "description": "This is an API Test",
+    "version": "1.0.0",
+    "contact": {
+      "email": "jdouglira@gmail.com"
+    }
+  },
+  "paths": {
+    "/test": {
+      "post": {
+        "tags": [
+          "test"
+        ]
+      }
+    }
+  }
+}
