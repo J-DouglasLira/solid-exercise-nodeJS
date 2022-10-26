@@ -42,13 +42,13 @@ class UsersRepository implements IUsersRepository {
   }
 
   findByEmail(email: string): User | undefined {
-    const emailAlreadyExist = this.users.find((item) => item.email === email);
-    return emailAlreadyExist;
+    const user = this.users.find((item) => item.email === email);
+    return user;
   }
 
   findById(id: string): User | undefined {
-    const findById = this.users.find((item) => item.id === id);
-    return findById;
+    const user = this.users.find((item) => item.id === id);
+    return user;
   }
 }
 
