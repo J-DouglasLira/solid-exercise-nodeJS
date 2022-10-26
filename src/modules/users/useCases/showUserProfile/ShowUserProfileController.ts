@@ -6,11 +6,7 @@ class ShowUserProfileController {
   // eslint-disable-next-line prettier/prettier
   constructor(private showUserProfileUseCase: ShowUserProfileUseCase) { }
 
-  handle(request: Request, response: Response): Response {
-    const { user_id } = request.params;
-    const allUsers = this.showUserProfileUseCase.execute({ user_id });
-    return response.json(allUsers);
-  }
+  handle(request: Request, response: Response): Response { }
 }
 
 export { ShowUserProfileController };

@@ -9,10 +9,7 @@ class ShowUserProfileUseCase {
   // eslint-disable-next-line prettier/prettier
   constructor(private usersRepository: IUsersRepository) { }
 
-  execute({ user_id }: IRequest): User[] {
-    const idAlreadyExist = this.usersRepository.list();
-    return idAlreadyExist;
-  }
+  execute({ user_id }: IRequest): User { }
 }
 
 export { ShowUserProfileUseCase };

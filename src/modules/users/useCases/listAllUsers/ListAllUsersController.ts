@@ -6,7 +6,11 @@ class ListAllUsersController {
   // eslint-disable-next-line prettier/prettier
   constructor(private listAllUsersUseCase: ListAllUsersUseCase) { }
 
-  handle(request: Request, response: Response): Response { }
+  handle(request: Request, response: Response): Response {
+    const { user_id } = request.params;
+    const allUsers = this.listAllUsersUseCase.execute({ user_id });
+    return response.json(allUsers);
+  }
 }
 
 export { ListAllUsersController };
