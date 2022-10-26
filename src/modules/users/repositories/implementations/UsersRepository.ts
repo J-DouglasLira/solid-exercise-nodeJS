@@ -23,13 +23,19 @@ class UsersRepository implements IUsersRepository {
     Object.assign(user, {
       name,
       email,
+      created_at: new Date(),
+      updated_at: new Date(),
     });
-    return this.users.push(user);
+    this.users.push(user);
+    console.log(user);
+    return user;
   }
 
   list(): User[] {
     return this.users;
   }
+
+  turnAdmin(receivedUser: User): User { }
 
   findByEmail(email: string): User | undefined {
     const emailAlreadyExist = this.users.find((item) => item.email === email);
@@ -37,11 +43,8 @@ class UsersRepository implements IUsersRepository {
   }
 
   findById(id: string): User | undefined {
-    //
-  }
-
-  turnAdmin(receivedUser: User): User {
-    // Complete aqui
+    const findById = this.users.find((item) => item.id === id);
+    return findById;
   }
 }
 

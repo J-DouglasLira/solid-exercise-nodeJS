@@ -11,7 +11,7 @@ class CreateUserController {
     try {
       this.createUserUseCase.execute({ email, name });
     } catch (error) {
-      return response.status(400).json({ error: "mensagem de error" });
+      return response.status(400).json({ error: "email already exist" });
     }
     return response.status(201).json({ email, name });
   }

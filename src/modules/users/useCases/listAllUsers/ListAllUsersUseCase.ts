@@ -6,11 +6,9 @@ interface IRequest {
 }
 
 class ListAllUsersUseCase {
-  constructor(private usersRepository: IUsersRepository) {}
+  constructor(private usersRepository: IUsersRepository) { }
 
-  execute({ user_id }: IRequest): User[] {
-    // Complete aqui
-  }
+  execute({ user_id }: IRequest): User[] { }
 }
 
 export { ListAllUsersUseCase };

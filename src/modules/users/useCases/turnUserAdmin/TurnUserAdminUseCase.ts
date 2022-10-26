@@ -6,11 +6,10 @@ interface IRequest {
 }
 
 class TurnUserAdminUseCase {
-  constructor(private usersRepository: IUsersRepository) {}
+  // eslint-disable-next-line prettier/prettier
+  constructor(private usersRepository: IUsersRepository) { }
 
-  execute({ user_id }: IRequest): User {
-    // Complete aqui
-  }
+  execute({ user_id }: IRequest): User { }
 }
 
 export { TurnUserAdminUseCase };
