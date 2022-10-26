@@ -27,7 +27,6 @@ class UsersRepository implements IUsersRepository {
       updated_at: new Date(),
     });
     this.users.push(user);
-    console.log(user);
     return user;
   }
 
@@ -35,7 +34,12 @@ class UsersRepository implements IUsersRepository {
     return this.users;
   }
 
-  turnAdmin(receivedUser: User): User { }
+  turnAdmin(receivedUser: User): User {
+    const user = receivedUser;
+    user.admin = true;
+    user.updated_at = new Date();
+    return user;
+  }
 
   findByEmail(email: string): User | undefined {
     const emailAlreadyExist = this.users.find((item) => item.email === email);

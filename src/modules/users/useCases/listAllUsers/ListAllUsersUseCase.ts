@@ -11,6 +11,14 @@ class ListAllUsersUseCase {
 
   execute({ user_id }: IRequest): User[] {
     const idAlreadyExist = this.usersRepository.list();
+    const onlyAdminCanSee = idAlreadyExist.find(
+      (item) => item.id === user_id && item.admin === true
+    );
+    /* 
+    if (!onlyAdminCanSee) {
+      throw new Error("This is not possible");
+    } 
+    */
     return idAlreadyExist;
   }
 }

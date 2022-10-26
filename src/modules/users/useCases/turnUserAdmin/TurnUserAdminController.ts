@@ -8,8 +8,12 @@ class TurnUserAdminController {
 
   handle(request: Request, response: Response): Response {
     const { user_id } = request.params;
-    this.turnUserAdminUseCase.execute({ user_id });
-    return response.status(201).send();
+    try {
+      this.turnUserAdminUseCase.execute({ user_id });
+    } catch (error) {
+      return response.status(404).json({ error: "User Doesn't exist" });
+    }
+    return response.status(201).json();
   }
 }
 
